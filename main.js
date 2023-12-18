@@ -1,0 +1,24 @@
+
+const counter = document.querySelector(".counter");
+const btnInc = document.querySelector(".btn-inc");
+const btnDec = document.querySelector(".btn-dec");
+const btnClr = document.querySelector(".btn-clr");
+const number = document.querySelector(".number");
+
+let constNum = 0;
+
+
+function updateCounter(n) {
+  if (constNum + n < 0) {
+    return;
+  }
+  constNum += n;
+  number.textContent = constNum;
+}
+
+
+
+
+btnInc.addEventListener("click", () => updateCounter(1));
+btnDec.addEventListener("click", () => updateCounter(-1));
+btnClr.addEventListener("click", () => updateCounter(-constNum));
